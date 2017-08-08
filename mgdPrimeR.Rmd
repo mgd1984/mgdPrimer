@@ -570,3 +570,6 @@ visualize(dataset = "HFB", xvar = "RBI", yvar = "H", type = "scatter", color = "
 ```{r fig.width=10.77, fig.height=18.46, dpi = 96}
 visualize(dataset = "HFB", xvar = "Player", yvar = c("AB", "R", "H", "HR", "RBI", "AVG", "OBP"), type = "bar", color = "Player", fill = "GP", axes = c("flip", "sort"), alpha = 0.75, custom = FALSE)
 ```
+
+
+#### Git test
