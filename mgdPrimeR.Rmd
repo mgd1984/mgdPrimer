@@ -11,13 +11,13 @@ output:
 
 ## Alec's PrimeR
 
-Load Top Level Packages & Initialize Setup Options 
+Load Top Level Packages & Initialize Setup Options
 ```{r setup, include=T,message=F,fig.align='center'}
 knitr::opts_chunk$set(echo = T, out.width="100%")
 
 ```
-## Reasons to Learn R 
-  
+## Reasons to Learn R
+
 * R is in heavy use at several of the leading companies who are hiring data scientists. Google and Facebook both have data scientists using R. [link](https://www.r-bloggers.com/why-you-should-learn-r-first-for-data-science/)
 
 * "R is the [lingua franca](blog.revolutionanalytics.com/2013/11/the-rise-of-r-as-the-language-of-analytics.html) of data science, businesses are rapidly adopting R to support these data science programs."
@@ -26,67 +26,67 @@ knitr::opts_chunk$set(echo = T, out.width="100%")
 
 * Beyond tech giants like Google, Facebook, and Microsoft, R is widely in use at a wide range of companies including Bank of America, Ford, TechCrunch, Uber, and Trulia.
 
-* Because R is open-source, there is a massive community of tools, libraries, and support for it. The ability of R to interface with other software through a variety of API's & bindings for other languages make it a powerful language to learn. In a sense, it's a meta-language that allows the programmer to speak many other computer languages. 
+* Because R is open-source, there is a massive community of tools, libraries, and support for it. The ability of R to interface with other software through a variety of API's & bindings for other languages make it a powerful language to learn. In a sense, it's a meta-language that allows the programmer to speak many other computer languages.
 
-## Uses for R 
-* [Data Manipulation](http://cran.r-project.org/web/packages/plyr/index.html) 
-* [Data Visualization](http://docs.ggplot2.org/current/) 
+## Uses for R
+* [Data Manipulation](http://cran.r-project.org/web/packages/plyr/index.html)
+* [Data Visualization](http://docs.ggplot2.org/current/)
 * [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html)
   * [NLP](http://aiplaybook.a16z.com/docs/guides/nlp)
-* [Financial Analysis](http://cran.r-project.org/web/views/Finance.html) 
+* [Financial Analysis](http://cran.r-project.org/web/views/Finance.html)
 * [Interactive Google Charts](http://cran.r-project.org/web/packages/googleVis/index.html)
 * [Text Mining](http://www.exegetic.biz/blog/2013/09/text-mining-the-complete-works-of-william-shakespeare)
 * [Web Apps](http://shiny.rstudio.com/articles/)
 
-## Advantages of R Programming 
-  
-* Reproducibility - Simply saving output is not enough. You need the ability to re-create results for the analysis when updated data become available. 
+## Advantages of R Programming
+
+* Reproducibility - Simply saving output is not enough. You need the ability to re-create results for the analysis when updated data become available.
 
 * Repeatability. You can do everything in R in one script and then come back to it after a few years still able to track your steps down.
-  
-## Proof of Work
-The goal of the following code snippets is to demonstrate what I've learned over the last two months of learning to code in R. With the exception of some Excel modelling learned at the Ivey School of Business, I was essentially a novice coder coming into this project. 
 
-Given that R is an open-source langugage/framework/community, with over 10,000 packages & plug-ins, each with their own idiosyncracies, it's an incredibly rich & diverse cosmos of code. As many have noted, the learning curve is rather steep, but that a little bit of understanding goes a long way. 
+## Proof of Work
+The goal of the following code snippets is to demonstrate what I've learned over the last two months of learning to code in R. With the exception of some Excel modelling learned at the Ivey School of Business, I was essentially a novice coder coming into this project.
+
+Given that R is an open-source langugage/framework/community, with over 10,000 packages & plug-ins, each with their own idiosyncracies, it's an incredibly rich & diverse cosmos of code. As many have noted, the learning curve is rather steep, but that a little bit of understanding goes a long way.
 
 The code chunks & examples below are intended to demonstrate my nascent, but growing facility with R. A couple of the methods I have used in learning to code in R, included:
 
-1. Datacamp Courses & O'Rielly Books on R - formal tutorials & exercises 
-2. Scripting & Hacking - informal, copy/paste/edit, open-source coding 
+1. Datacamp Courses & O'Rielly Books on R - formal tutorials & exercises
+2. Scripting & Hacking - informal, copy/paste/edit, open-source coding
 3. Watching coding videos on Youtube (i.e. plotcon, Hadley Wickham, Rstudio, etc.)
 
-Overall, I feel that I have developed a firm grasp of the fundamentals in R (basic data structure, exploratory data analysis, tidy data, data wrangling, plotting, etc.) and a modest, but growing understanding of the syntax & functionality of the countless packages and APIs that R supports. 
+Overall, I feel that I have developed a firm grasp of the fundamentals in R (basic data structure, exploratory data analysis, tidy data, data wrangling, plotting, etc.) and a modest, but growing understanding of the syntax & functionality of the countless packages and APIs that R supports.
 
 To be continued...
 
 ## Data Structures in R
-Data structures are the fundamental units of operation in R Programming. Understanding a dataset's structure is crucial to understanding what you can do with it. There are two key parts that determine a dataset's structure: 
+Data structures are the fundamental units of operation in R Programming. Understanding a dataset's structure is crucial to understanding what you can do with it. There are two key parts that determine a dataset's structure:
 
   1. Dimensionality - (1D (vectors & lists), 2D (matrices & data frames), nD (arrays))
- 
-  2. Composition - (heterogenous or homogenous) 
 
-This question of dataset structure should be asked early on in one's **Exploratory Data Analysis**. Unless you have data about the data (i.e. it's structure, attributes, and other meta-data), it's easy to get lost in an analysis, or run up against errors. Understanding meta-data is an important step in understanding data. 
+  2. Composition - (heterogenous or homogenous)
+
+This question of dataset structure should be asked early on in one's **Exploratory Data Analysis**. Unless you have data about the data (i.e. it's structure, attributes, and other meta-data), it's easy to get lost in an analysis, or run up against errors. Understanding meta-data is an important step in understanding data.
 Below I take a look at the 5 key data structures in R and why understanding their similarities & differences are important to writing good R code.  
 
-### The vector: 
-The (atomic) vector is a sequence of data elements of the same basic type (i.e. homogeneous) 
+### The vector:
+The (atomic) vector is a sequence of data elements of the same basic type (i.e. homogeneous)
 
 ``` {r, echo=TRUE}
-  vec1 <- c("A","B","C") 
+  vec1 <- c("A","B","C")
   str(vec1)
   (vec1)
-``` 
+```
 
 ### The list:
-The list is a sequence of data elements that can be of any type (heterogeneous), including lists. 
+The list is a sequence of data elements that can be of any type (heterogeneous), including lists.
 
 ```{r}
 list1 <- list("A","B","C",1,2,3,T,F,T,1L,2L,as.integer(3))
 str(list1)
 ```
-  
-### The matrix: 
+
+### The matrix:
 The matrix is a 2-dimensional data structure consisting of homogeneous elements.  
 ``` {r, echo=TRUE}
   vec2 <- c("A","B","C")
@@ -103,9 +103,9 @@ A data frame similar to a matrix in that it represents a rectangular array of da
 str(mtcars)
 
 ```
-  
-### The array: 
-An n-dimensional array is a set of stacked matrices of identical dimensions. 
+
+### The array:
+An n-dimensional array is a set of stacked matrices of identical dimensions.
 
 ```{r}
 a <- matrix(1, 2, 3)               
@@ -116,29 +116,29 @@ d <- array(c(a,b,c), c(2, 3, 3))
 d
 ```
 
-### Factors & Attributes 
+### Factors & Attributes
 A factor is a vector that can contain only predefined values, and is used to store categorical data. The `class`, factor, which makes them behave differently from regular integer vectors, and the `levels`, which defines the set of allowed values.
 
 All objects can have arbitrary additional attributes, used to store metadata about the object. Attributes can be thought of as a named list (with unique names). Attributes can be accessed individually with `attr()` or all at once (as a list) with `attributes()`.
 
 ## Tools, Editors/IDEs, Addins
 * [Rstudio](https://www.rstudio.com/) is and freely availabe code-editor with a well-designed GUI that makes R easy & intuitive to use.  
-* [R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown) produces well-formatted documents (HTML, pdf & more) while retaining all your code to reproduce numbers and graphs with newer data over time. 
+* [R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown) produces well-formatted documents (HTML, pdf & more) while retaining all your code to reproduce numbers and graphs with newer data over time.
 * [Shinyapps](https://www.shinyapps.io) - Shiny apps combine the computational power of R with the interactivity of the modern web.
 * [RStudioAddins](https://rstudio.github.io/rstudioaddins/) - mechanism for executing R functions interactively from within the R Studio IDE—either through keyboard shortcuts, or through the Addins toolbar dropdown.    
 
-## Exploratory Data Analysis: 
+## Exploratory Data Analysis:
 Exploratory Data Analysis (EDA) is an iterative process built around 3 basic steps:
 
   1. Generating questions about the data.  
-  
+
   2. Seraching for answers by visualizing, transforming, and modelling the data.  
-  
+
   3. Using insight from step 2 to refine the questions and generate new, more interesting questions about the data.  
-  
+
 My basic approach to EDA:
 
-1. Generate questions/hypotheses about the data. Figure out what you want, can, and need to do with the data to make it confess it's insights to you. 
+1. Generate questions/hypotheses about the data. Figure out what you want, can, and need to do with the data to make it confess it's insights to you.
 
 2. Describe the tasks in the form of functional computer code i.e. "Read in this .csv file using functions from the readR package, tidy it up with dplyr functions, convert it to this other format, add some statistical transformations and visualize the output with ggplot2 & plotly."
 
@@ -150,13 +150,13 @@ My basic approach to EDA:
 
 6. Reset & Rewrite Code to account for the insight gained in the previous step.
 
-7. Continue to iterate/tweak the code until you've revealed a useful insight from the data. 
+7. Continue to iterate/tweak the code until you've revealed a useful insight from the data.
 
 8. Publish
 
 
-## Other Coding & Data Analytics Tips 
-* “D.R.Y.” - Don’t Repeat Yourself 
+## Other Coding & Data Analytics Tips
+* “D.R.Y.” - Don’t Repeat Yourself
 * "Premature optimization is the root of all evil." (Knuth)
 * Don’t start re-writing your code unless the time saved is going to be worth the time invested.
 * There is a continuum between **explanatory models** on the one side and **predictive models** on the other side.
@@ -172,19 +172,19 @@ An effective chart is one that:
 
 ## Useful Packages by Function
 
-### Text/Linguistic/Sentiment/Affective Analysis 
+### Text/Linguistic/Sentiment/Affective Analysis
 
-* [Quanteda]() - R package for managing and analyzing textual data 
-* [LIWCalike]() - textual & sentiment analysis package that emulates LIWC software developed by James Pennebaker 
-* [wordcloud]() - for creating word clouds based on text mining/sentiment analysis 
+* [Quanteda]() - R package for managing and analyzing textual data
+* [LIWCalike]() - textual & sentiment analysis package that emulates LIWC software developed by James Pennebaker
+* [wordcloud]() - for creating word clouds based on text mining/sentiment analysis
 * [psych]() - package with functions useful for personality, psychometric, and psychological research
 * [pdftools]() - text extraction and rendering of PDF documents
-* [tm](https://cran.r-project.org/web/packages/tm/index.html) - A framework for text mining applications within R. Many packages such as wordcloud, 
-* [Text Mining with R - A Tidy Approach](http://tidytextmining.com/) - O'Reilly textbook 
+* [tm](https://cran.r-project.org/web/packages/tm/index.html) - A framework for text mining applications within R. Many packages such as wordcloud,
+* [Text Mining with R - A Tidy Approach](http://tidytextmining.com/) - O'Reilly textbook
 
-### Data Extraction 
-* XML - Tools for Parsing and Generating XML Within R 
-* 
+### Data Extraction
+* XML - Tools for Parsing and Generating XML Within R
+*
 
 ### Data Manipulation
 
@@ -192,11 +192,11 @@ An effective chart is one that:
 * [dplyr]() - tools for working with data frames. “Verbs” are functions with which translate common data manipulation tasks. The syntax and function of all these verbs are very similar: (a) The first argument is a data frame; (b) the subsequent arguments describe what to do with the data frame. The result is a new data frame. Some common dplyr functions include `filter()` and `slice()`, `arrange()`, `select()`, `rename()`, `distinct()`, `mutate()`, `transmute()`, `summarise()`, `sample_n()`, `sample_frac()`
 
 
-* [tidyr](http://tidyr.tidyverse.org/) - The goal of tidyr is to help you create tidy data. Tidy data is data where (i) each variable is in a column (ii) each observation is a row and (iii) each value is a cell. If you ensure that your data is tidy, you’ll spend less timing fighting with the tools and more time working on your analysis. 
-  
-### Time Series Analysis 
+* [tidyr](http://tidyr.tidyverse.org/) - The goal of tidyr is to help you create tidy data. Tidy data is data where (i) each variable is in a column (ii) each observation is a row and (iii) each value is a cell. If you ensure that your data is tidy, you’ll spend less timing fighting with the tools and more time working on your analysis.
 
-* [dygraphs](http://dygraphs.com/) -The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R. 
+### Time Series Analysis
+
+* [dygraphs](http://dygraphs.com/) -The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R.
 
 ### Data Visualization
 
@@ -207,16 +207,16 @@ An effective chart is one that:
 * R Stats - ggplot2 Tutorial - [Part 3 - The Master List - 50 ggplot Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
 * [hrbrthemes]() - Additional Themes and Theme Components for ‘ggplot2’
-* graphics - 
+* graphics -
 * [plotly]() -  
-* [Showtext](https://github.com/yixuan/showtext) - makes it easy to use various types of fonts (TrueType, OpenType, Type 1, web fonts, etc.) in R graphs. 
+* [Showtext](https://github.com/yixuan/showtext) - makes it easy to use various types of fonts (TrueType, OpenType, Type 1, web fonts, etc.) in R graphs.
 * [Circlize]() - efficient way for the (circular) visualization of large data sets
 
-### Business Intelligence & Analytics 
+### Business Intelligence & Analytics
 [Radiant](https://github.com/radiant-rstats/radiant) - Radiant is an open-source, platform-independent browser-based interface for business analytics using R & Shiny. Radiant focuses on business data and decisions. It offers context-relevant tools, examples, and documentation to reduce the business analytics learning curve.
 
 ### Map Visualization
-* [rGoogleMaps](https://cran.r-project.org/web/packages/RgoogleMaps/RgoogleMaps.pdf) - 
+* [rGoogleMaps](https://cran.r-project.org/web/packages/RgoogleMaps/RgoogleMaps.pdf) -
 
 * [leaflet](https://rstudio.github.io/leaflet/) - an interface to the JavaScript library Leaflet to create interactive web maps
 
@@ -225,9 +225,9 @@ library(leaflet)
 library(magrittr)
 map <- "https://api.mapbox.com/styles/v1/mapbox/traffic-night-v2/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWdkMTk4NCIsImEiOiJjajMwNmlscHQwMDIyMnFvMzdrZ2tocWJpIn0.beIkvfwLITKLQDDbi1ZjGA"
 toronto <- leaflet(width="100%") %>%
-  # addProviderTiles("Esri.WorldImagery") %>% 
-  addMarkers(lat = 43.7,lng=-79.4,popup = "T Dot.") %>% 
-  setView(lat=43.7,lng=-79.4,zoom = 10) %>% 
+  # addProviderTiles("Esri.WorldImagery") %>%
+  addMarkers(lat = 43.7,lng=-79.4,popup = "T Dot.") %>%
+  setView(lat=43.7,lng=-79.4,zoom = 10) %>%
   addTiles(urlTemplate = map)
 toronto
 ```
@@ -237,30 +237,30 @@ toronto
 * [knitr](https://cran.r-project.org/web/packages/knitr/knitr.pdf) - transparent engine for dynamic report generation with R. Used a lot in R-markdown documents for code-chunks. [Knitr Options](https://yihui.name/knitr/options/)
 * [Shiny](https://www.rstudio.com/wp-content/uploads/2016/01/shiny-cheatsheet.pdf) - web app framework for R
 * [rsconnect](https://github.com/rstudio/rsconnect) - An R package used for deploying applications to the ShinyApps hosted service.
-* [RMarkdown](http://rmarkdown.rstudio.com/) - 
-* [htmlwidgets](http://www.htmlwidgets.org/) The htmlwidgets package provides a framework for creating R bindings to JavaScript libraries, seamlessly bridging R and JavaScript. A line or two of R code is all it takes to produce a D3 graphic or Leaflet map. 
+* [RMarkdown](http://rmarkdown.rstudio.com/) -
+* [htmlwidgets](http://www.htmlwidgets.org/) The htmlwidgets package provides a framework for creating R bindings to JavaScript libraries, seamlessly bridging R and JavaScript. A line or two of R code is all it takes to produce a D3 graphic or Leaflet map.
 
-## Data Sets & Data Providers 
+## Data Sets & Data Providers
 
 * [KD Nuggets](http://www.kdnuggets.com/datasets/index.html) - Datasets for Data Mining & Data Science  
 * [Quandl](https://docs.quandl.com/docs/r) "Get millions of financial and economic datasets from hundreds of publishers directly into R."
     * [Installation & Authetication](https://docs.quandl.com/docs/installation)
 
 ```{r,message=FALSE}
- 
-# Load libraries & Authenticate 
+
+# Load libraries & Authenticate
 library(Quandl)           # Great source of sample data (of all types)
 library(ggplot2)          # For creating plots & visualizations
 library(dygraphs)         # For creating interactive time series charts
-library(reshape2)         # For data.frame format transformations 
+library(reshape2)         # For data.frame format transformations
 library(hrbrthemes)       # Plotting & visual theme package
-library(ggthemes)         # Extra geoms, scales, & themes for ggplot 
+library(ggthemes)         # Extra geoms, scales, & themes for ggplot
 library(viridis)          # Well-designed colour scales
 library(magrittr)         # For "piping" operations
 library(RColorBrewer)     # For nice looking colour palettes (i.e. theme maps)
 library(plotly)           # For interactive plots
 library(tidyr)            # For tidying data with spread() & gather() functions
-library(dplyr)            # Provides a flexible grammar for data frame manipulation. 
+library(dplyr)            # Provides a flexible grammar for data frame manipulation.
 
 QuandlKey <-Quandl.api_key(Sys.getenv("QuandlKey"))
 
@@ -268,7 +268,7 @@ QuandlKey <-Quandl.api_key(Sys.getenv("QuandlKey"))
 
 ```{r, warning=F, message=F}
 
-# ggplot of US Venture Capital Data from the NVCA 
+# ggplot of US Venture Capital Data from the NVCA
 
 US_VC_Deals <- Quandl("NVCA/VENTURE_3_09D", collapse = 'annual')
 US_VC_Deals <- select(US_VC_Deals,"Date","Seed","Early Stage","Expansion","Later Stage")
@@ -280,14 +280,14 @@ p <- ggplot(US_VC_Deals, aes(x = Date, y=value, col=variable)) +
         labs(x="",y="# of Deals")+
         theme_economist()+
         scale_color_economist()
-        
+
 p <- p + ggtitle("VC Deals - 1985-2016") + theme(legend.title = element_blank())
 
 gp <- ggplotly(p)
 
 gp # plotly of g
 
-p # plot 
+p # plot
 
 ```
 
@@ -303,12 +303,12 @@ p2 <- ggplot(data = US_VC_Deal_Flow, aes(x = Date, y = value,colour = variable))
       scale_color_economist()+
       scale_y_continuous(position = "right", labels = scales::dollar)
 
-ggplotly(p2 +theme(plot.subtitle = element_text(vjust = 1), 
-    plot.caption = element_text(vjust = 1), 
-    axis.line = element_line(linetype = "solid"), 
-    axis.ticks = element_line(size = 0.9, 
-        linetype = "dashed"), axis.text.x = element_text(vjust = 0.25, 
-        angle = 45), legend.position = "bottom", 
+ggplotly(p2 +theme(plot.subtitle = element_text(vjust = 1),
+    plot.caption = element_text(vjust = 1),
+    axis.line = element_line(linetype = "solid"),
+    axis.ticks = element_line(size = 0.9,
+        linetype = "dashed"), axis.text.x = element_text(vjust = 0.25,
+        angle = 45), legend.position = "bottom",
         legend.direction = "horizontal"))
 ```
 
@@ -369,7 +369,7 @@ multiplot(p,p2,cols=1)
 
 # Download Vix data through Quandl in xts format, collapse by week
 Vix <- Quandl("CBOE/VIX",collapse = "daily",type="xts")
-  str(Vix) 
+  str(Vix)
   dygraph(Vix)
 ```
 
@@ -377,7 +377,7 @@ Vix <- Quandl("CBOE/VIX",collapse = "daily",type="xts")
 LBMA_GOLD <- Quandl("LBMA/GOLD",collapse = "daily", type="xts")
 LBMA_GOLD_YEARS <- slice(LBMA_GOLD,1:1311)
 Gold_Plot <- dygraph(data=LBMA_GOLD,main = "Gold Prices",xlab = "Date",ylab = "Dollars")
-Gold_Plot 
+Gold_Plot
 
 ```
 ```{r, eval=FALSE, message=F, include=FALSE}
@@ -443,19 +443,19 @@ multiplot(Oil_Price_Plot,Oil_Prod_Plot,cols=1)
 ```
 
 ###
- 
+
 ## Complementary Languages
 
-* JavaScript - 
-* d3.js - 
-* python - 
-* json - 
+* JavaScript -
+* d3.js -
+* python -
+* json -
 * XML -
 * HTML -
 * PHP -
 * SQL -
 
-## AI/ML/Analytics Product Management 
+## AI/ML/Analytics Product Management
 
 
 ## CRAN Task Views
@@ -476,11 +476,11 @@ Bayesian Inference, Chemometrics & Computational Physics,	Clinical Trial Design,
 
 [R Studio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
 
-* [List of R Functions](http://www.sr.bham.ac.uk/~ajrs/R/r-function_list.html) List of R functions - single line descriptions of various R functions (general, math, graphical, fitting/regression/optimization, statistical) 
-* [List of Some Useful R Functions](http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/resources/R/rFunctionsList.pdf) - List of Some Useful R Functions </a> - help functions; general functions; math functions; plotting functions; statistics functions; regression (linear, generalized, graphics, tests & transformations, survival analysis, linear & nonlinear mixed effect, structural equations, recursive portioning & regression trees, 
-* [Base R Function](http://www.statmethods.net/management/functions.html) Built-in Functions - numeric functions; character functions; statistical probability functions, other statistical functions, other useful functions 
+* [List of R Functions](http://www.sr.bham.ac.uk/~ajrs/R/r-function_list.html) List of R functions - single line descriptions of various R functions (general, math, graphical, fitting/regression/optimization, statistical)
+* [List of Some Useful R Functions](http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/resources/R/rFunctionsList.pdf) - List of Some Useful R Functions </a> - help functions; general functions; math functions; plotting functions; statistics functions; regression (linear, generalized, graphics, tests & transformations, survival analysis, linear & nonlinear mixed effect, structural equations, recursive portioning & regression trees,
+* [Base R Function](http://www.statmethods.net/management/functions.html) Built-in Functions - numeric functions; character functions; statistical probability functions, other statistical functions, other useful functions
 * [A short list of the most useful R commands](https://www.personality-project.org/r/r.commands.html) A short list of the most useful R commands </a> - Input & display; Moving around; Distributions; Data manipulation; Statistics & transformations; Regression, linear models, factor analysis; Useful additional commands; Graphics; Distributions; Working with Dates
-* [Quick List of Useful R Packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) - 
+* [Quick List of Useful R Packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages) -
 
 ## GIS, Maps & Visualization
 * [R Graph Gallery](http://www.r-graph-gallery.com/)  
@@ -499,37 +499,37 @@ Bayesian Inference, Chemometrics & Computational Physics,	Clinical Trial Design,
 * [R For Data Science (book)](http://r4ds.had.co.nz/)
 * [5 Tips for Learning to Code for Visualization (FlowingData)](http://flowingdata.com/2016/06/09/5-tips-for-learning-to-code-for-visualization/)
 * [Simon Ejdemyr Tutorials](https://stanford.edu/~ejdemyr/#teaching)
-* [Everyday Analytics](http://www.everydayanalytics.ca/) 
+* [Everyday Analytics](http://www.everydayanalytics.ca/)
 * [rBloggers](https://www.r-bloggers.com/)
 * [r4stats](http://r4stats.com/examples/graphics-ggplot2/)
 * [Extracting Data From the Web - R Tutorial](https://www.rstudio.com/resources/webinars/extracting-data-from-the-web-part-1/) * [R Reference Card for Data Mining](https://docs.google.com/viewerng/viewer?url=http://www.rdatamining.com/docs/RDataMining-reference-card.pdf)
 * [Combining the Power of R and D3.js](https://www.ae.be/blog-en/combining-the-power-of-r-and-d3-js/)
-* [How to store & use web service keys and authentication details with R](http://blog.revolutionanalytics.com/2015/11/how-to-store-and-use-authentication-details-with-r.html) 
+* [How to store & use web service keys and authentication details with R](http://blog.revolutionanalytics.com/2015/11/how-to-store-and-use-authentication-details-with-r.html)
 * [Data Camp](https://www.datacamp.com/community/tutorials/r-tutorial-read-excel-into-r#gs.5CUI0=A)
 * [Best Practices for Writing an API Package](https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html)
-* [R Graphs Gallery](http://www.r-graph-gallery.com/all-graphs/) 
+* [R Graphs Gallery](http://www.r-graph-gallery.com/all-graphs/)
 
 ## Unsorted
 * Vectorization in R - Why?
 * **AI is the New Electricity** - Talk at Stanford Graduate School of Business on Machine Learning (link to more detailed notes)
-* 
+*
 <iframe width="560" height="315" src="https://www.youtube.com/embed/21EiKfQYZXc" frameborder="0" allowfullscreen></iframe>
 
-## Interesting Projects 
+## Interesting Projects
 
 * [MandelbrotR](http://www.everydayanalytics.ca/2014/12/the-mandelbrot-set-in-r.html)
 * [Rweekly](https://rweekly.org/live)
 * [Data Elixir](https://dataelixir.com/)
-* [Len Kiefer](http://lenkiefer.com/archive.html) 
+* [Len Kiefer](http://lenkiefer.com/archive.html)
 * [EIA Data](https://github.com/Matt-Brigida/EIAdata)
 * [GDELT Project](http://blog.gdeltproject.org/gdelt-2-0-our-global-world-in-realtime/)
 * [GDELT API](http://blog.gdeltproject.org/gdelt-geo-2-0-api-debuts/)
 * [GDELT/newsflash](https://github.com/hrbrmstr/newsflash)
 * [GDELTR2](https://github.com/abresler/gdeltr2)
 
-## 
+##
 
-## Types of Plots 
+## Types of Plots
 1. [Correlation](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#1.%20Correlation) - Scatterplots, Scatterplots With Encircling, Jitter Plots, Count Charts
 Bubble Plot, Animated Bubble Plot, Marginal Histogram / Boxplot, Correlogram)
 2. [Deviation](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html#2.%20Deviation) - Diverging Bars, Diverging Lollipop Chart, Diverging Dot Plot, Area Chart
@@ -570,6 +570,3 @@ visualize(dataset = "HFB", xvar = "RBI", yvar = "H", type = "scatter", color = "
 ```{r fig.width=10.77, fig.height=18.46, dpi = 96}
 visualize(dataset = "HFB", xvar = "Player", yvar = c("AB", "R", "H", "HR", "RBI", "AVG", "OBP"), type = "bar", color = "Player", fill = "GP", axes = c("flip", "sort"), alpha = 0.75, custom = FALSE)
 ```
-
-
-#### Git test
